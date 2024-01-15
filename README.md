@@ -1,4 +1,4 @@
-# Cherny.co URL shortener
+# NextJS URL shortener
 
 This is a URL shortener application using Next.js framework.
 
