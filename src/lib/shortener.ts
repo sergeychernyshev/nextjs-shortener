@@ -5,3 +5,11 @@ export async function getURL(slug: string) {
 
   return url;
 }
+
+export async function getStaticParamsConfig() {
+  const paths: { params: { slug: string } }[] = [];
+
+  urls.forEach((url, slug) => paths.push({ params: { slug } }));
+
+  return paths;
+}

@@ -1,4 +1,4 @@
-import { getURL } from "@/lib/shortener";
+import { getURL, getStaticParamsConfig } from "@/lib/shortener";
 import { redirect } from "next/navigation";
 
 export default async function Shortener({
@@ -23,3 +23,5 @@ export default async function Shortener({
 
   redirect(url.toString());
 }
+
+export const generateStaticParams = getStaticParamsConfig;

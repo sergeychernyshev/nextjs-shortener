@@ -1,4 +1,4 @@
-import { getURL } from "@/lib/shortener";
+import { getURL, getStaticParamsConfig } from "@/lib/shortener";
 
 export default async function Shortener({
   params,
@@ -26,3 +26,5 @@ export default async function Shortener({
     );
   }
 }
+
+export const generateStaticParams = getStaticParamsConfig;
