@@ -1,7 +1,7 @@
-import { kv } from "@vercel/kv";
+import urls from "@/urls";
 
 export async function getURL(slug: string) {
-  const url: string | null = await kv.get(slug);
+  const url = urls.get(slug) || null;
 
   return url;
 }

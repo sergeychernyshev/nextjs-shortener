@@ -5,7 +5,7 @@ export default async function Shortener({
 }: {
   params: { slug: string };
 }) {
-  const url: string | null = await getURL(params.slug);
+  const url: URL | null = await getURL(params.slug);
 
   if (!url) {
     return (
@@ -20,7 +20,7 @@ export default async function Shortener({
         <h1>Short URL Information</h1>
         <p>Slug: {params.slug}</p>
         <p>
-          URL: <a href={url}>{url}</a>
+          URL: <a href={url.toString()}>{url.toString()}</a>
         </p>
       </>
     );

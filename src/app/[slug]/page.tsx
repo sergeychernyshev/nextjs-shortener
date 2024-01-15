@@ -6,7 +6,7 @@ export default async function Shortener({
 }: {
   params: { slug: string };
 }) {
-  const url: string | null = await getURL(params.slug);
+  const url: URL | null = await getURL(params.slug);
 
   // in case shortened URL is not found, redirect to default URL
   if (!url) {
@@ -21,5 +21,5 @@ export default async function Shortener({
     redirect(default_url);
   }
 
-  redirect(url);
+  redirect(url.toString());
 }
